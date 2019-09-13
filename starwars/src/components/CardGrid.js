@@ -11,7 +11,7 @@ export default function CardGrid() {
       .then(res => {
         //console.log("This is the response", res);
         const data = res.data.results;
-        //console.log("This is the array of people", data);
+        console.log("This is the array of people", data);
         setPeople(data);
       })
       .catch(e => {
@@ -24,11 +24,12 @@ export default function CardGrid() {
       {people.map(person => {
         return (
           <PersonCard
+            birth={person.birth_year}
             key={person.name}
             films={person.films}
             name={person.name}
             species={person.species}
-            weight={person.mass}
+            mass={person.mass}
           />
         );
       })}
