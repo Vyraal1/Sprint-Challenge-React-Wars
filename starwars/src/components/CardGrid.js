@@ -19,5 +19,17 @@ export default function CardGrid() {
       });
   }, []);
   console.log(people);
-  return <div className="card-container"></div>;
+  return (
+    <div className="card-container">
+      {people.map(person => {
+        return (
+          <Card
+            name={person.name}
+            species={person.species}
+            weight={person.mass}
+          />
+        );
+      })}
+    </div>
+  );
 }
